@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-export const SelectingEl = () => {
+interface SelectingElProps {
+    title: string;
+}
+
+export const SelectingEl = ({title} : SelectingElProps) => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const [fName, setFname] = useState('');
     const [lName, setLname] = useState('');
@@ -22,7 +26,7 @@ export const SelectingEl = () => {
     }
     return (
         <>
-            <h2>Selecting Element using useRef hook</h2>
+            <h2>{title}</h2>
             <form onSubmit={logMessage.bind(this)}>
                 <label htmlFor = 'fName'>First Name:</label>
                 <input onChange={(e) => setFname(e.target.value)} ref = {inputRef} type='text' name='fName' value={fName} /><br />
