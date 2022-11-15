@@ -5,7 +5,8 @@ import {Timer} from './hooks/useState';
 import {SelectingEl} from './hooks/useRef';
 import UseEffectComponent from './hooks/useEffect';
 import {UseReducerComponent} from './hooks/useReducer';
-import {UseContextComponent} from './hooks/useContext';
+// import {UseContextComponent} from './hooks/useContext';
+import {ForwardRef} from './hooks/forwardRef';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <SelectingEl title='React useRef and useEffect Hook' /> */}
       {/* <UseEffectComponent title='React useEffect and useLayoutEffect' /> */}
       {/* <UseReducerComponent title='React useReducer hook'/> */}
-      <UseContextComponent title='React useContext hook' />
+      {/* <UseContextComponent title='React useContext hook' /> */}
+      <ForwardRef title='React ForwardRef' />
     </div>
   );
 }
