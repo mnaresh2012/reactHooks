@@ -9,9 +9,9 @@ export const UseContextComponent = ({title}:UseContextComponentProps) => {
     return (
         <>
             <h2>{title}</h2>
-            {/* <AppContext.Provider value={{title: 'Hello! there.'}}>
+            <AppContext.Provider value={{title: 'Hello! there'}}>
                 <LevelOneComponent />
-            </AppContext.Provider> */}
+            </AppContext.Provider>
         </>
     );
 }
@@ -26,10 +26,10 @@ const LevelOneComponent = () => {
 }
 
 const LevelTwoComponent = () => {
-    //const {title} = useContext(AppContext);
+    const {title} = useContext(AppContext);
     return (
         <>
-            {/* <p>{title}</p> */}
+            <p>{title}</p>
         </>
     );
 }
