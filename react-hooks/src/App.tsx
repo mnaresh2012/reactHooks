@@ -1,22 +1,34 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import './App.css';
 
-import {Timer} from './hooks/useState';
-import {SelectingEl} from './hooks/useRef';
-import UseEffectComponent from './hooks/useEffect';
-import {UseReducerComponent} from './hooks/useReducer';
-// import {UseContextComponent} from './hooks/useContext';
-import {ForwardRef} from './hooks/forwardRef';
+import {UseState} from './components/useState';
+import {UseEffect} from './components/useEffect';
+import {Usereducer} from './components/useReducer';
+import { UseContext } from './components/useContext';
 
-function App() {
+export const AppContext = createContext({title: ''});
+
+interface UseContextComponentProps {
+  title: string;
+}
+
+function App({title}:UseContextComponentProps) {
+  const Description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis soluta facere, accusamus mollitia officiis sequi cupiditate nobis porro minus totam odit sunt, aspernatur dolores fugiat, modi nisi aliquam aperiam iste.';
   return (
     <div className="App">
-      {/* <Timer title =  'React useState Hook'/> */}
-      {/* <SelectingEl title='React useRef and useEffect Hook' /> */}
-      {/* <UseEffectComponent title='React useEffect and useLayoutEffect' /> */}
-      {/* <UseReducerComponent title='React useReducer hook'/> */}
-      {/* <UseContextComponent title='React useContext hook' /> */}
-      <ForwardRef title='React ForwardRef' />
+      <h2>ReactJS Hooks</h2>
+      <p>
+        <s>useState, useEffect,</s> useReducer, useContext, useRef, useCallback, useMemo
+      </p>
+
+      <hr />
+
+      {/* <UseState info = {Description} /> */}
+      {/* <UseEffect /> */}
+      {/* <Usereducer /> */}
+      <AppContext.Provider value={{title: 'Hello from Context API'}}>
+        <UseContext />
+      </AppContext.Provider>
     </div>
   );
 }
