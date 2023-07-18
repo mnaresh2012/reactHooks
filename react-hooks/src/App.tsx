@@ -18,7 +18,7 @@ function App({title}:UseContextComponentProps) {
     <div className="App">
       <h2>ReactJS Hooks Deatails</h2>
       <p>
-        <s>useState, useEffect,</s> useReducer, useContext, useRef, useCallback, useMemo
+        <s>useState, useEffect,</s> useReducer, useRef, forwardRefs, useContext, useCallback, useMemo
       </p>
 
       <hr />
